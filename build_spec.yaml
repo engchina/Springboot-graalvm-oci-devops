@@ -4,12 +4,7 @@ timeoutInSeconds: 5000
 shell: bash
 env:
   exportedVariables:
-    - buildId
 steps:
-  - type: Command
-    command: |
-      buildId=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-6 | rev`
-      echo "Build ID: $buildId"
   - type: Command
     command: |
       wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/dqtXs0f7rB65ZiPa1TopJYrpQkgpjAyo_mDu5vQhyJjWDHIai2y0QjpL5g1VDcEe/n/frsxwtjslf35/b/download/o/graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
@@ -21,7 +16,4 @@ steps:
       gu install -L native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar
       ./mvnw package
       sh build.sh
-      docker login fra.ocir.io -u 'frsxwtjslf35/oracleidentitycloudservice/mika.rinne@oracle.com' -p 'Y}SMSjCO02X5o){e.(-K'
-      docker build -t fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:$buildId .
-      docker push fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:$buildId
-      
+      ./target/native-image/hello-spring-boot-app
