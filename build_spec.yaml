@@ -19,6 +19,6 @@ steps:
       echo "native build done."
 outputArtifacts:
   - name: native-image
-    type: GENERIC_FILE
+    type: artifact-type
     location: ./target/native-image/hello-spring-boot-app
     
