@@ -7,20 +7,6 @@ env:
 steps:
   - type: Command
     command: |
-    if [[ -z "${IMAGE}" ]]; then
-      echo "please specify image e.g. fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0"
-    fi
-    if [[ -z "${REGISTRY}" ]]; then
-      echo "please specify registry e.g. fra.ocir.io"
-    fi
-    if [[ -z "${DOCKER_USER}" ]]; then
-      echo "please specify docker user"
-    fi
-    if [[ -z "${DOCKER_PWD}" ]]; then
-      echo "please specify docker password"
-    fi
-  - type: Command
-    command: |
       wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/dqtXs0f7rB65ZiPa1TopJYrpQkgpjAyo_mDu5vQhyJjWDHIai2y0QjpL5g1VDcEe/n/frsxwtjslf35/b/download/o/graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
       wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/yk30-_NDdL8Y8vw1geXCvHxijN0mTsFM2Q1mnxpt-GRws-IrcCS2-eMvVC6vxU4G/n/frsxwtjslf35/b/download/o/native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar
       tar -xzf graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
