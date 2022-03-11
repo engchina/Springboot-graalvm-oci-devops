@@ -13,7 +13,7 @@ to run the native app image: <b>./hello-spring-boot-app</b>
 <p>
 
  <pre>
- [opc@dev ~]$ ./hello-spring-boot-app-1.0
+ [opc@dev ~]$ ./hello-spring-boot-app
 2022-03-11 11:23:04.308  INFO 976306 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
 
   .   ____          _            __ _ _
