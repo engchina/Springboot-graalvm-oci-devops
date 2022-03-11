@@ -8,7 +8,7 @@ steps:
   - type: Command
     command: |
       tar -xzf graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
-      export PATH=apache-maven-3.8.4/bin:graalvm-ee-java11-21.3.0/bin:$PATH
+      export PATH=graalvm-ee-java11-21.3.0/bin:$PATH
       export JAVA_HOME=graalvm-ee-java11-21.3.0
       java -version
       gu install -L native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar
