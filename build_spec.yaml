@@ -17,9 +17,8 @@ steps:
       ./mvnw package
       sh build.sh
       echo "native build done."
-      docker build -t fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0 .
 outputArtifacts:
-  - name: springboot-image
-    type: DOCKER_IMAGE
-    location: fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0
+  - name: native-image
+    type: GENERIC_FILE
+    location: ./target/native-image/hello-spring-boot-app
     
