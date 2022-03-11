@@ -6,10 +6,10 @@ graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
 <br>
 native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar
 <p>
-Create a artifact to OCI DevOps with a name ´native-image´
+Create a artifact to OCI DevOps with a name `native-image`
 <p>
-Download the image and do ´chmod +x hello-spring-boot-app´
-to run the compiled app: ./target/native-image/hello-spring-boot-app
+Download the create artifact image and do `chmod +x hello-spring-boot-app`
+to run the native app image: `./hello-spring-boot-app`
 <p>
 
 
