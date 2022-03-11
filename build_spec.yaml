@@ -4,14 +4,16 @@ timeoutInSeconds: 5000
 shell: bash
 env:
   exportedVariables:
+    - REGISTRY
+    - DOCKER_USER
+    - DOCKER_PWD
+    - IMAGE
 steps:
   - type: Command
     command: |
       wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/dqtXs0f7rB65ZiPa1TopJYrpQkgpjAyo_mDu5vQhyJjWDHIai2y0QjpL5g1VDcEe/n/frsxwtjslf35/b/download/o/graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
       wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/yk30-_NDdL8Y8vw1geXCvHxijN0mTsFM2Q1mnxpt-GRws-IrcCS2-eMvVC6vxU4G/n/frsxwtjslf35/b/download/o/native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar
       tar -xzf graalvm-ee-java11-linux-amd64-21.3.0.tar.gz
-  - type: Command
-    command: |
       export PATH=apache-maven-3.8.4/bin:graalvm-ee-java11-21.3.0/bin:$PATH
       export JAVA_HOME=graalvm-ee-java11-21.3.0
       java -version
@@ -19,8 +21,6 @@ steps:
       ./mvnw package
       sh build.sh
       echo "native build done."
-  - type: Command
-    command: |
       docker login ${REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PWD}
       docker build -t ${IMAGE} .
       docker push ${IMAGE}
