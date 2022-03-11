@@ -6,7 +6,7 @@ Need to add the GraalVM files listed in .gitignore from <a href="https://www.ora
 <br>
 <b>native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar</b>
 <p>
-Create a artifact to OCI DevOps with a name <b><i>native-image<i></b>, see the <b>build_spec.yaml</b> for reference
+Create a artifact to OCI DevOps with a name <b><i>native-image</i></b>, see the <b>build_spec.yaml</b> for reference
 <p>
 Download the create artifact image and do <b>chmod +x hello-spring-boot-app</b>
 to run the native app image: <b>./hello-spring-boot-app</b>
