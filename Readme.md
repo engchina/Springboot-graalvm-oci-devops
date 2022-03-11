@@ -6,7 +6,7 @@ Need to add the GraalVM files listed in .gitignore from <a href="https://www.ora
 <br>
 <b>native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar</b>
 <p>
-  Either push these files to the repo or use <b>wget</b> to download them from OCI object storage.
+  Either push these files to the repo or use <b>wget</b> to download them from OCI object storage before the un-tar in <b>build_spec.yaml</b>
 <p>
   Create an <i>artifact</i> to OCI DevOps with a name <b><i>native-image</i></b>, see the <b>build_spec.yaml</b> for reference
 <p>
