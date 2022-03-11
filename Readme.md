@@ -1,4 +1,4 @@
-Sample Spring boot app native build with GraalVM for GitLab on Oracle Linux. 
+Sample Spring boot app native build with GraalVM for OCI DevOps on Oracle Linux. 
 <p>
 Need to add the GraalVM files listed in .gitignore from <a href="https://www.oracle.com/downloads/graalvm-downloads.html">https://www.oracle.com/downloads/graalvm-downloads.html</a> :
 <p>
@@ -6,7 +6,7 @@ Need to add the GraalVM files listed in .gitignore from <a href="https://www.ora
 <br>
 <b>native-image-installable-svm-svmee-java11-linux-amd64-21.3.0.jar</b>
 <p>
-Create a artifact to OCI DevOps with a name <b>native-image</b>
+Create a artifact to OCI DevOps with a name <b><i>native-image<i></b>, see the <b>build_spec.yaml</b> for reference
 <p>
 Download the create artifact image and do <b>chmod +x hello-spring-boot-app</b>
 to run the native app image: <b>./hello-spring-boot-app</b>
