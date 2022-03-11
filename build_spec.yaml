@@ -4,10 +4,6 @@ timeoutInSeconds: 5000
 shell: bash
 env:
   exportedVariables:
-    - REGISTRY
-    - DOCKER_USER
-    - DOCKER_PWD
-    - IMAGE
 steps:
   - type: Command
     command: |
@@ -21,6 +17,9 @@ steps:
       ./mvnw package
       sh build.sh
       echo "native build done."
-      docker login ${REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PWD}
       docker build -t fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0 .
-      docker push fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0
+  outputArtifacts:
+  - name: springboot-image
+    type: DOCKER_IMAGE
+    location: fra.ocir.io/frsxwtjslf35/springboot-graal-ee-native:1.0
+    
